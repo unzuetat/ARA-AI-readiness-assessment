@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─────────────────────────────────────────────────── */
+
+html {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0F1117;
+  color: #F0F2F5;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2F3A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #353A47;
+}
+
+/* ─── Selection ────────────────────────────────────────────── */
+
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+  color: #F0F2F5;
+}
+
+/* ─── Focus ────────────────────────────────────────────────── */
+
+*:focus-visible {
+  outline: 2px solid #6366F1;
+  outline-offset: 2px;
+}
+
+/* ─── Transitions ──────────────────────────────────────────── */
+
+.transition-default {
+  transition: all 200ms ease-out;
+}
+
+/* ─── Dimension accent borders ─────────────────────────────── */
+
+.border-t-dimension-str { border-top-color: #6366F1; }
+.border-t-dimension-dat { border-top-color: #06B6D4; }
+.border-t-dimension-tal { border-top-color: #F59E0B; }
+.border-t-dimension-gov { border-top-color: #EF4444; }
+.border-t-dimension-cul { border-top-color: #8B5CF6; }
+.border-t-dimension-pro { border-top-color: #10B981; }
