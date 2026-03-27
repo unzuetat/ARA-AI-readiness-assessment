@@ -5,7 +5,7 @@ import { es } from './es';
 // ============================================================
 // i18n System — Lightweight, no dependencies
 // ============================================================
-
+ 
 export type Locale = 'en' | 'es';
 
 export type TranslationDictionary = Record<string, string>;
