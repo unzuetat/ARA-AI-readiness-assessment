@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useTranslation } from '../i18n';
-import { useStore } from '../../store';
-import { DIMENSION_ORDER } from '../../data/dimensions';
-import { BENCHMARKS } from '../../data/benchmarks';
-import type { DimensionCode } from '../../types';
+import { useStore } from '../store';
+import { DIMENSION_ORDER } from '../data/dimensions';
+import { BENCHMARKS } from '../data/benchmarks';
+import type { DimensionCode } from '../types';
 
 const DOT_COLORS: Record<DimensionCode, string> = {
   STR: 'bg-dimension-str',
