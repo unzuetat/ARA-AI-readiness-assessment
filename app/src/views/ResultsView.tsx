@@ -1,7 +1,7 @@
 import { useTranslation } from '../i18n';
-import { useStore } from '../../store';
-import { DIMENSION_ORDER } from '../../data/dimensions';
-import type { DimensionCode } from '../../types';
+import { useStore } from '../store';
+import { DIMENSION_ORDER } from '../data/dimensions';
+import type { DimensionCode } from '../types';
 
 const BAR_COLORS: Record<DimensionCode, string> = {
   STR: 'bg-dimension-str',
