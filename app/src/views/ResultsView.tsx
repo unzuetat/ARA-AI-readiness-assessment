@@ -1,4 +1,4 @@
-import { useTranslation } from '../../i18n';
+import { useTranslation } from '../i18n';
 import { useStore } from '../../store';
 import { DIMENSION_ORDER } from '../../data/dimensions';
 import type { DimensionCode } from '../../types';
