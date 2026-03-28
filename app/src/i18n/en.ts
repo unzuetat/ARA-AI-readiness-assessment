@@ -506,4 +506,28 @@ export const en: TranslationDictionary = {
   'ui.questionOf': 'Question {{current}} of {{total}}',
   'ui.dimensionOf': 'Dimension {{current}} of {{total}}',
   'ui.language': 'Language',
+  'ui.toSelect': 'select',
+  'ui.toNavigate': 'navigate',
+  'ui.answerAll': 'Answer all questions to see results',
+  'ui.dimensionScores': 'Dimension Scores',
+  'ui.noResults': 'No results yet. Complete the assessment first.',
+  'ui.results': 'Your AI Readiness Diagnosis',
+  'ui.phase3Note': 'Radar chart, deep dive, comparison mode, and PDF export coming in Phase 3.',
+
+  // ─── Welcome (extended) ───────────────────────────────────
+  'welcome.orgLabel': 'Organization name (optional)',
+  'welcome.orgPlaceholder': 'e.g., Acme Corp',
+  'welcome.industryLabel': 'Industry (for benchmark comparison)',
+  'welcome.industryPlaceholder': 'Select your industry...',
+
+  // ─── Benchmarks ───────────────────────────────────────────
+  'benchmark.public-sector': 'Public Sector / Government',
+  'benchmark.financial-services': 'Financial Services / Banking',
+  'benchmark.healthcare': 'Healthcare',
+  'benchmark.technology': 'Technology / SaaS',
+  'benchmark.manufacturing': 'Manufacturing',
+  'benchmark.retail': 'Retail / E-commerce',
+  'benchmark.education': 'Education',
+  'benchmark.telecommunications': 'Telecommunications',
+  'benchmark.generic': 'Generic / Cross-industry',
 };
