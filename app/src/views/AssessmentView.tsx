@@ -29,12 +29,9 @@ export default function AssessmentView() {
   const isLastQuestion = currentDimension === 5 && currentQuestion === 4;
   const isFirstQuestion = currentDimension === 0 && currentQuestion === 0;
 
-  // Auto-advance after selection (with small delay for visual feedback)
   const handleSelect = useCallback(
     (level: MaturityLevelNumber) => {
       setAnswer(questionId, level);
-
-      // Don't auto-advance on last question
       if (!isLastQuestion) {
         setTimeout(() => {
           nextQuestion();
@@ -44,7 +41,6 @@ export default function AssessmentView() {
     [questionId, isLastQuestion, setAnswer, nextQuestion]
   );
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
@@ -64,13 +60,8 @@ export default function AssessmentView() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isLastQuestion, isFirstQuestion, nextQuestion, prevQuestion, handleSelect, setPhase]);
 
-  const handleViewResults = () => {
-    calculateResults();
-  };
-
   return (
     <div className="max-w-2xl mx-auto space-y-8">
-      {/* Progress */}
       <ProgressBar
         currentDimension={currentDimension}
         currentQuestion={currentQuestion}
@@ -78,10 +69,8 @@ export default function AssessmentView() {
         onDimensionClick={goToDimension}
       />
 
-      {/* Dimension context */}
       <DimensionHeader code={dimensionCode} />
 
-      {/* Question */}
       <div key={questionId}>
         <QuestionCard
           questionId={questionId}
@@ -91,7 +80,7 @@ export default function AssessmentView() {
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between pt-4 border-t border-surface-400">
+      <div className="flex items-center justify-between pt-4 border-t border-theme">
         <button
           onClick={() => {
             if (isFirstQuestion) {
@@ -100,43 +89,36 @@ export default function AssessmentView() {
               prevQuestion();
             }
           }}
-          className="px-4 py-2 text-sm text-content-secondary hover:text-content-primary transition-default"
+          className="text-sm text-fg2 hover:text-fg transition-default"
         >
           {isFirstQuestion ? t('ui.back') : t('ui.previous')}
         </button>
 
         <div className="flex items-center gap-3">
-          {/* Keyboard hints */}
-          <div className="hidden sm:flex items-center gap-2 text-[10px] text-content-muted">
-            <span className="px-1.5 py-0.5 bg-surface-600 rounded text-content-tertiary">
-              1-5
-            </span>
+          <div className="hidden sm:flex items-center gap-2 text-[10px] text-fg3">
+            <span className="px-1.5 py-0.5 border border-theme text-fg3">1-5</span>
             <span>{t('ui.toSelect')}</span>
-            <span className="px-1.5 py-0.5 bg-surface-600 rounded text-content-tertiary">
-              ← →
-            </span>
+            <span className="px-1.5 py-0.5 border border-theme text-fg3">← →</span>
             <span>{t('ui.toNavigate')}</span>
           </div>
 
           {isLastQuestion && isComplete ? (
             <button
-              onClick={handleViewResults}
-              className="px-6 py-2 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded transition-default"
+              onClick={calculateResults}
+              className="px-6 py-2 bg-accent text-on-accent text-sm font-medium transition-default"
             >
               {t('ui.viewResults')}
             </button>
           ) : isLastQuestion && !isComplete ? (
-            <span className="text-xs text-content-muted">
-              {t('ui.answerAll')}
-            </span>
+            <span className="text-xs text-fg3">{t('ui.answerAll')}</span>
           ) : (
             <button
               onClick={nextQuestion}
               disabled={!selectedLevel}
-              className={`px-5 py-2 text-sm font-medium rounded transition-default ${
+              className={`px-5 py-2 text-sm font-medium transition-default ${
                 selectedLevel
-                  ? 'bg-surface-600 hover:bg-surface-500 text-content-primary'
-                  : 'bg-surface-700 text-content-muted cursor-not-allowed'
+                  ? 'border border-strong text-fg hover:bg-surface'
+                  : 'border border-theme text-muted cursor-not-allowed'
               }`}
             >
               {t('ui.next')}
