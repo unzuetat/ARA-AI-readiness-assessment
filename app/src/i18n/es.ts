@@ -506,4 +506,28 @@ export const es: TranslationDictionary = {
   'ui.questionOf': 'Pregunta {{current}} de {{total}}',
   'ui.dimensionOf': 'Dimensión {{current}} de {{total}}',
   'ui.language': 'Idioma',
+  'ui.toSelect': 'seleccionar',
+  'ui.toNavigate': 'navegar',
+  'ui.answerAll': 'Responde todas las preguntas para ver los resultados',
+  'ui.dimensionScores': 'Puntuaciones por Dimensión',
+  'ui.noResults': 'Aún no hay resultados. Completa la evaluación primero.',
+  'ui.results': 'Tu Diagnóstico de Preparación para IA',
+  'ui.phase3Note': 'Radar chart, análisis profundo, modo comparación y exportación PDF próximamente en Fase 3.',
+
+  // ─── Welcome (extended) ───────────────────────────────────
+  'welcome.orgLabel': 'Nombre de la organización (opcional)',
+  'welcome.orgPlaceholder': 'ej., Acme Corp',
+  'welcome.industryLabel': 'Industria (para comparación con benchmark)',
+  'welcome.industryPlaceholder': 'Selecciona tu industria...',
+
+  // ─── Benchmarks ───────────────────────────────────────────
+  'benchmark.public-sector': 'Sector Público / Gobierno',
+  'benchmark.financial-services': 'Servicios Financieros / Banca',
+  'benchmark.healthcare': 'Sanidad',
+  'benchmark.technology': 'Tecnología / SaaS',
+  'benchmark.manufacturing': 'Manufactura / Industria',
+  'benchmark.retail': 'Retail / E-commerce',
+  'benchmark.education': 'Educación',
+  'benchmark.telecommunications': 'Telecomunicaciones',
+  'benchmark.generic': 'Genérico / Multi-sector',
 };
