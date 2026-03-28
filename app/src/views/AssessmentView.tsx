@@ -1,12 +1,12 @@
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from '../i18n';
-import { useStore } from '../../store';
-import { DIMENSION_ORDER } from '../../data/dimensions';
-import { isAssessmentComplete } from '../../engine/scoring';
-import ProgressBar from '../../components/assessment/ProgressBar';
-import DimensionHeader from '../../components/assessment/DimensionHeader';
-import QuestionCard from '../../components/assessment/QuestionCard';
-import type { MaturityLevelNumber } from '../../types';
+import { useStore } from '../store';
+import { DIMENSION_ORDER } from '../data/dimensions';
+import { isAssessmentComplete } from '../engine/scoring';
+import ProgressBar from '../components/assessment/ProgressBar';
+import DimensionHeader from '../components/assessment/DimensionHeader';
+import QuestionCard from '../components/assessment/QuestionCard';
+import type { MaturityLevelNumber } from '../types';
 
 export default function AssessmentView() {
   const { t } = useTranslation();
